@@ -17,6 +17,10 @@ public class Table {
 
     private final Collection<Reservation> reservations = new ArrayList<>();
 
+    public Collection<Reservation> getReservations() {
+        return reservations;
+    }
+
     @Override
     public String toString() {
         return String.format("Столик #%d.", number);
