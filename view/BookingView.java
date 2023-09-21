@@ -2,10 +2,17 @@ package view;
 
 import model.Table;
 import presenter.IView;
+import presenter.ViewObserver;
 
 import java.util.Collection;
+import java.util.Date;
 
 public class BookingView implements IView {
+    private ViewObserver observer;
+
+    public void reservationTable(Date orderDate, int tableNumber, String name) {
+        observer.onReservationTable(orderDate, tableNumber, name);
+    }
     @Override
     public void printReservationTableResultUI(int reservationNumber) {
         if (reservationNumber > 0) {
@@ -21,5 +28,10 @@ public class BookingView implements IView {
         for (Table table : tables) {
             System.out.println(table);
         }
+    }
+
+    @Override
+    public void setObserver(ViewObserver observer) {
+        this.observer = observer;
     }
 }
