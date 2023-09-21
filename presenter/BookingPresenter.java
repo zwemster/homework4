@@ -20,4 +20,8 @@ public class BookingPresenter {
     public void updateReservationResultUI(int reservationId) {
         bookingView.printReservationTableResultUI(reservationId);
     }
+
+    public void updateTablesUI() {
+        bookingView.showTables(loadTables());
+    }
 }

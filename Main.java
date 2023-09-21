@@ -1,5 +1,12 @@
+import model.TableModel;
+import presenter.BookingPresenter;
+import view.BookingView;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        TableModel model = new TableModel();
+        BookingView view = new BookingView();
+        BookingPresenter bookingPresenter = new BookingPresenter(model, view);
+        bookingPresenter.updateTablesUI();
     }
 }
