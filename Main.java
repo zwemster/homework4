@@ -11,6 +11,8 @@ public class Main {
         BookingPresenter bookingPresenter = new BookingPresenter(model, view);
         bookingPresenter.updateTablesUI();
 
-        view.reservationTable(new Date(),5, "Максим Андреич");
+        view.reservationTable(new Date(),3, "Максим Андреич");
+
+        view.changeReservationTable(101, new Date(), 1, "Максим Андреич");
     }
 }

@@ -12,6 +12,10 @@ public class BookingView implements IView {
 
     public void reservationTable(Date orderDate, int tableNumber, String name) {
         observer.onReservationTable(orderDate, tableNumber, name);
+
+    }
+    public void changeReservationTable(int oldReservation, Date reservationDate, int tableNumber, String name) {
+        observer.onChangeReservationTable(oldReservation, reservationDate, tableNumber, name);
     }
     @Override
     public void printReservationTableResultUI(int reservationNumber) {
@@ -22,14 +26,12 @@ public class BookingView implements IView {
             System.out.println("\nНе удалось забронировать столик. Попробуйте выполнить операцию позднее.\n");
         }
     }
-
     @Override
     public void showTables(Collection<Table> tables) {
         for (Table table : tables) {
             System.out.println(table);
         }
     }
-
     @Override
     public void setObserver(ViewObserver observer) {
         this.observer = observer;

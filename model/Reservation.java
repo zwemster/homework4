@@ -1,10 +1,9 @@
 package model;
 
 import java.util.Date;
-import java.util.zip.DataFormatException;
 
 public class Reservation {
-    private static int counter = 10;
+    private static int counter = 100;
     private final int id;
     private Date date;
     private String name;

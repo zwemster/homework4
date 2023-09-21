@@ -34,4 +34,20 @@ public class TableModel implements IModel {
         }
         return -1;
     }
+
+    public int changeReservationTable(int oldReservation, Date reservationDate, int tableNumber, String name) {
+        for (Table table : loadTables()) {
+            for (Reservation reservation : table.getReservations()) {
+                if (reservation.getId() == oldReservation) {
+                    table.getReservations().remove(reservation);
+
+                    Reservation newReservation = new Reservation(reservationDate, name);
+                    table.getReservations().add(newReservation);
+
+                    return newReservation.getId();
+                }
+            }
+        }
+        return -1;
+    }
 }
